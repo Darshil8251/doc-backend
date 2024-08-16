@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Layout from "./../../components/Layout";
-import axios from "axios";
+import apiClient from "../../components/apiClient";
 import { useParams, useNavigate } from "react-router-dom";
 import { Col, Form, Input, Row, TimePicker, message } from "antd";
 import { useSelector, useDispatch } from "react-redux";
@@ -18,7 +18,7 @@ const Profile = () => {
   const handleFinish = async (values) => {
     try {
       dispatch(showLoading());
-      const res = await axios.post(
+      const res = await apiClient.post(
         "/api/v1/doctor/updateProfile",
         {
           ...values,
@@ -52,7 +52,7 @@ const Profile = () => {
   //getDOc Details
   const getDoctorInfo = async () => {
     try {
-      const res = await axios.post(
+      const res = await apiClient.post(
         "/api/v1/doctor/getDoctorInfo",
         { userId: params.id },
         {

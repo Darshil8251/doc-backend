@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Layout from "./../../components/Layout";
-import axios from "axios";
+import apiClient from "../../components/apiClient";
 import { Table } from "antd";
 const Users = () => {
   const [users, setUsers] = useState([]);
@@ -8,7 +8,7 @@ const Users = () => {
   //getUsers
   const getUsers = async () => {
     try {
-      const res = await axios.get("/api/v1/admin/getAllUsers", {
+      const res = await apiClient.get("/api/v1/admin/getAllUsers", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

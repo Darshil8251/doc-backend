@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import apiClient from "../components/apiClient";
 import Layout from "./../components/Layout";
 import { Row } from "antd";
 import DoctorList from "../components/DoctorList";
@@ -8,7 +8,7 @@ const HomePage = () => {
   // login user data
   const getUserData = async () => {
     try {
-      const res = await axios.get(
+      const res = await apiClient.get(
         "/api/v1/user/getAllDoctors",
 
         {
