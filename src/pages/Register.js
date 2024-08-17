@@ -1,10 +1,11 @@
 import React from "react";
 import "../styles/RegisterStyles.css";
 import { Form, Input, message } from "antd";
-import axios from "axios";
+import axios from 'axios';
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { showLoading, hideLoading } from "../redux/features/alertSlice";
+
 const Register = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
