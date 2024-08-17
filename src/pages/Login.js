@@ -13,8 +13,7 @@ const Login = () => {
   const onfinishHandler = async (values) => {
     try {
       dispatch(showLoading());
-      const res = await axios.post("api/v1/user/login", values);
-      // window.location.reload();
+      const res = await axios.post("https://doctor-appointment-system-duyy.onrender.com/api/v1/user/login", values);
       console.log(res)
       dispatch(hideLoading());
       if (res.data.success) {

@@ -13,7 +13,7 @@ const Register = () => {
   const onfinishHandler = async (values) => {
     try {
       dispatch(showLoading());
-      const res = await axios.post("/api/v1/user/register", values);
+      const res = await axios.post("https://doctor-appointment-system-duyy.onrender.com/api/v1/user/register", values);
       dispatch(hideLoading());
       if (res.data.success) {
         message.success("Register Successfully!");

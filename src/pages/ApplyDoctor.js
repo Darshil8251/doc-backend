@@ -16,7 +16,7 @@ const ApplyDoctor = () => {
     try {
       dispatch(showLoading());
       const res = await axios.post(
-        "/api/v1/user/apply-doctor",
+        "https://doctor-appointment-system-duyy.onrender.com/api/v1/user/apply-doctor",
         {
           ...values,
           userId: user._id,
@@ -41,7 +41,7 @@ const ApplyDoctor = () => {
     } catch (error) {
       dispatch(hideLoading());
       console.log(error);
-      message.error("Somthing Went Wrrong ");
+      message.error("Something went wrong");
     }
   };
   return (

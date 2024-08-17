@@ -19,7 +19,7 @@ const Profile = () => {
     try {
       dispatch(showLoading());
       const res = await axios.post(
-        "/api/v1/doctor/updateProfile",
+        "https://doctor-appointment-system-duyy.onrender.com/api/v1/doctor/updateProfile",
         {
           ...values,
           userId: user._id,
@@ -44,7 +44,7 @@ const Profile = () => {
     } catch (error) {
       dispatch(hideLoading());
       console.log(error);
-      message.error("Somthing Went Wrrong ");
+      message.error("Something went wrong");
     }
   };
   // update doc ==========
@@ -53,7 +53,7 @@ const Profile = () => {
   const getDoctorInfo = async () => {
     try {
       const res = await axios.post(
-        "/api/v1/doctor/getDoctorInfo",
+        "https://doctor-appointment-system-duyy.onrender.com/api/v1/doctor/getDoctorInfo",
         { userId: params.id },
         {
           headers: {
